@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <link rel='stylesheet' href='bootstrap/bootstrap-4.3.1-dist/css/bootstrap.css' />
+    <script src='bootstrap/bootstrap-4.3.1-dist/js/bootstrap.js'></script>
+    <link rel='stylesheet' href='css/upcase.css'/>
+    <link href='vendor/fontawesome-free/css/all.min.css' rel='stylesheet' type='text/css'>
+    <link href='font.css' rel='stylesheet' type='text/css'>
+    <link href='font1.css' rel='stylesheet' type='text/css'>
+  
+    <!-- Theme CSS -->
+    <link href='css/freelancer.min.css' rel='stylesheet'>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+   
+    <!-- Material Design Bootstrap -->
+    <link href='css/mdb.min.css' rel='stylesheet'>
+    <!-- Your custom styles (optional) -->
+    <link href='css/style.min.css' rel='stylesheet'>
+    <script language="javascript">
+        function verify() {
+
+            if (document.form1.case_title.value == "") 
+			{
+                alert("Please give the case_title");
+                return false;
+            }
+
+			if (document.form1.c_s_date.value == "") 
+			{
+                alert("Please give the case start date");
+                return false;
+            }
+			
+		
+             if (document.form1.lawyer1.value == "" ) {
+                alert("Please enter atleast 2 lawyers handling case");
+                return false;
+            }
+			
+			 if (document.form1.lawyer2.value == "" ) {
+                alert("Please enter atleast 2 lawyers handling case");
+                return false;
+            }
+					
+            return ( true );
+        }
+    </script>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg text-uppercase fixed-top' id='mainNav' style='background-color: black;height:85px;'>
+        <div class='container' style='background-color: black;'>
+          <a class='navbar-brand js-scroll-trigger' href='#page-top'>Ministry Of Law and Justice(India)<image src='img/e4.jpg' class='w3-image' width='50' height='75'></image></a>
+          <button class='navbar-toggler navbar-toggler-right text-uppercase font-weight-bold text-white rounded' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
+            Menu
+            <i class='fas fa-bars'></i>
+          </button>
+          <div class='collapse navbar-collapse' id='navbarResponsive'>
+            <ul class='navbar-nav ml-auto'>
+              
+              <li class='nav-item mx-0 mx-lg-1'>
+                <a class='nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger' href='logout.php'  onmouseover='{this.style.backgroundColor='#343a40';this.style.color='white'}' onmouseout='this.style.backgroundColor='#000000'' onmouseout='this.style.backgroundColor='#fff''>LogOut</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class='row justify-content-center' style='margin: 5%;'>
+        <div class='col-md-6'>
+            <div class='card'>
+                <header class='card-header'>
+                    <!-- <a href='' class='float-right btn btn-outline-primary mt-1'>Log in</a> -->
+                    <h4 class='card-title mt-2'>Register</h4>
+                </header>
+                <article class='card-body'>
+                            <form method='POST' action='inv.php'>
+                                <div class='form-group'>
+                                    <label>Case Title</label>
+                                    <input type='text' class='form-control' placeholder='case title' name='case_title'>
+                                     </div>
+                                    <div class='form-row'>
+                                        <div class='col form-group'>
+                                            <label>Case Start Date </label>
+                                    <input type='date' class='form-control' placeholder='start date' name='start_date'>
+                                      </div> <!-- form-group end.// -->
+                                      <div class='col form-group'>
+                                         <label>Case End Date</label>
+
+                             <input type='date' class='form-control' placeholder='end date' name='end_date'>
+                                      </div> <!-- form-group end.// -->
+                                      </div> <!-- form-row end.// -->
+                                      <div class='form-row'>
+                                        <select name='c_type' class='form-control col-lg-12' >
+                                            <option value='criminal' >criminal</option>
+                                                    <option value='legal' selected>legal</option>
+                                            </select>
+                                      </div>
+                                        <div class='form-row'>
+                                            <div class='form-group col'>
+                                            <label>Judgement</label>
+                            <select name='judgement' class='form-control col-lg-12' >
+                                    <option value='PENDING' >Pending</option>
+                                            <option value='GIVEN' selected>Given</option>
+                                    </select>
+                                        </div>
+                                    </div>
+                                    <p class='text-lg-center mt-lg-5 text-primary text-uppercase bold'>Lawyers handling the case</p>
+                                    <div class='form-row'>
+                                    <div class='form-group col'>
+                                    <label>Lawyer 1</label>
+                                <input type='text' class='form-control' placeholder='lawyer 1' name='lawyer1'>
+                                         </div>
+                                        <div class='form-group col'>
+                                            <label>Lawyer 2</label>
+                                <input type='text' class='form-control' placeholder='lawyer 2' name='lawyer2'>
+                                            </div>
+                                        </div>
+                                        <div class='form-row'>
+                                        <div class='form-group col'>
+                                        <label>Lawyer 3</label>
+                                
+                                <input type='text' class='form-control' placeholder='lawyer 3' name='lawyer3'>
+                                        </div>
+                                        <div class='form-group col'>
+                                        <label>Lawyer 4</label>
+                                <input type='text' class='form-control' placeholder='lawyer4' name='lawyer4'>
+                                        </div>
+                                        </div>
+                                        <p class='text-lg-center mt-lg-5 text-primary text-uppercase bold'>Court Details</p>
+                                        <div class='col form-group'>
+                                        <label>Court</label>
+                                        <div class='drop-down'>
+                                <select name='court_abv' class='form-control col-lg-12'>
+                                            <option value='dc' selected>District Court</option>
+                                                    <option value='hc'>High Court</option>
+                                                    <option value='sc'>Supreme Court</option>
+                                            </select>
+                                                </div>
+                                             </div>
+                                            <div class='form-group col'>
+                                            <label>Place</label>
+                                   <select name='place_id' class='form-control col-lg-12'>
+                                       <option value='1' selected>Bangalore</option>
+                                                    <option value='2'>Chennai</option>
+                                                    <option value='3'>Delhi</option>
+                                                    <option value='4'>Kolkatta</option>
+                                      </select>
+                                    </div>
+                            <input type='submit' value='submit'/>
+                             </form>
+                </article>
+            </div>
+        </div>
+</body>
+</html>

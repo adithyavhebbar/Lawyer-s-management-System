@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome</title>
+  <link type="text/css" href="../CSS/indexcss.css" rel="stylesheet" />
+  <!-- <link rel="stylesheet /> -->
+  <link rel="stylesheet" href="../Bootstrap/bootstrap-4.3.1-dist/bootstrap-4.3.1-dist/css/bootstrap.css" />
+  <script src="../Bootstrap/bootstrap-4.3.1-dist/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+</head>
+
+<body id="body-container">
+  <div class="basenavbar mt-0">
+    <div class="sidenav col-lg-2" id="sidebar">
+      <p class="ml-lg-5 text-uppercase"><img src="../images/man.png" alt="man" width="60%" height="60%"
+          style="border-radius: 50%; margin-top: 2%;" /></p>
+      <input type="button" class="btn btn-primary col-lg-9 mt-lg-3 ml-lg-3 h-25" value="Lawyer"
+        onclick="lawyerdisplay();" /><br>
+      <input type="button" class="btn btn-primary col-lg-9 mt-lg-3 ml-lg-3 h-25" value="Admin"
+        onclick="admindisplay();" /><br>
+      <input type="button" class="btn btn-primary col-lg-9 mt-lg-3 ml-lg-3 h-25" value="Guest"
+        onclick="guestdisplay();" /><br>
+    </div>
+  </div>
+  <div class="col-lg-8" id="head-container">
+  </div>
+  <div id="lawyerform" class="border border-secondary col-lg-8 rounded">
+    <div class="form-margin">
+      <p class="col-sm-12">Lawyer Login </p>
+      <form class="form-element ml-lg-5 form-margin" action="llog.php" method="POST">
+        <div class="form-group row col-sm-12 mt-lg-1">
+          <label for="username" class=" col-form-label col-sm-2 ">User Name</label>
+          <input type="text" class="form-control col-sm-4 col-form-label ml-lg-5" id="username"
+            placeholder="Enter Username" name="regno" required>
+        </div>
+        <div class="form-group row col-sm-12 mr-md-3 mt-lg-1">
+          <label for="passwd" class="col-form-label col-sm-2 ">Password</label>
+          <input type="password" class="form-control col-sm-4 col-form-label ml-lg-5" id="passwd" placeholder="Password"
+            name="psw" required>
+        </div>
+        <button type="submit" class="btn btn-primary ml-lg-2 col-lg-2 mb-lg-1">Submit</button>
+        <input type="reset" class="btn btn-primary ml-lg-4 col-lg-2  mb-lg-1">
+      </form>
+    </div>
+  </div>
+  <div id="adminform" class="border border-secondary col-lg-8 rounded">
+    <div class="form-margin">
+      <p class="col-sm-12">Admin Login </p>
+      <form class="form-element needs-validation ml-lg-5" action="login.php" method="POST">
+        <div class="form-group row col-sm-12 mt-lg-1">
+          <label for="username" class=" col-form-label col-sm-2 ">User Name</label>
+          <input type="text" class="form-control col-sm-4 col-form-label ml-lg-5" id="username"
+            placeholder="Enter Username" name="username" required>
+          <div class="invalid-feedback">Please Fill this Field</div>
+        </div>
+        <div class="form-group row col-sm-12 mr-md-3 mt-lg-1">
+          <label for="passwd" class="col-form-label col-sm-2 ">Password</label>
+          <input type="password" class="form-control col-sm-4 col-form-label ml-lg-5" id="passwd" placeholder="Password"
+            name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary ml-lg-2 col-lg-2 mb-lg-1">Submit</button>
+        <input type="reset" class="btn btn-primary ml-lg-4 col-lg-2  mb-lg-1">
+      </form>
+    </div>
+  </div>
+  <div id="userform" class="border border-secondary col-lg-8 rounded">
+    <div class="form-margin">
+      <p class="col-sm-12">Guest Login </p>
+      <form class="form-element ml-lg-5 form-margin" action="clogin.php" method="POST">
+        <div class="form-group row col-sm-12 mt-lg-1">
+          <label for="username" class=" col-form-label col-sm-2 ">User Name</label>
+          <input type="text" class="form-control col-sm-4 col-form-label ml-lg-5" id="username"
+            placeholder="Enter Username" name="email_id" required>
+        </div>
+        <div class="form-group row col-sm-12 mr-md-3 mt-lg-1">
+          <label for="passwd" class="col-form-label col-sm-2 ">Password</label>
+          <input type="password" class="form-control col-sm-4 col-form-label ml-lg-5" id="passwd" placeholder="Password"
+            name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary ml-lg-2 col-lg-2 mb-lg-1">Submit</button>
+        <input type="reset" class="btn btn-primary ml-lg-4 col-lg-2 mb-lg-1"><br>
+        <p class="ml-lg-2">Don't Have an Account <a href="#">Click Here</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  document.getElementById('adminform').style.display = 'none';
+  document.getElementById('userform').style.display = 'none';
+
+  function lawyerdisplay() {
+    document.getElementById('lawyerform').style.display = 'block';
+    document.getElementById('adminform').style.display = 'none';
+    document.getElementById('userform').style.display = 'none';
+  }
+
+  function admindisplay() {
+    document.getElementById('adminform').style.display = 'block';
+    document.getElementById('lawyerform').style.display = 'none';
+    document.getElementById('userform').style.display = 'none';
+  }
+
+  function guestdisplay() {
+    document.getElementById('userform').style.display = 'block';
+    document.getElementById('lawyerform').style.display = 'none';
+    document.getElementById('adminform').style.display = 'none';
+  }
+</script>
+
+</html>

@@ -1,0 +1,143 @@
+create table lawyers
+(regno smallint not null,
+ name varchar(50) not null,
+ gender char(1) not null, 
+ dob date not null,
+ doorno varchar(20),
+ street varchar(50),
+ locality varchar(50),
+ city varchar(30),
+ state varchar(30),
+ pincode varchar(7),
+ contact_no varchar(10),
+ email_id varchar(50),
+ primary key (regno));
+ 
+
+create table qualification
+(regno smallint not null,
+ llb year not null,
+ llm year,
+ mphil year,
+ phd year,
+ foreign key (regno) references lawyers(regno) on delete cascade
+primary key (regno));
+
+create table experience
+(regno smallint not null,
+ ayearsdc int,
+ ayearshc int,
+ ayearssc int,
+ jyearsdc int,
+ jyearshc int,
+ jyearssc int,
+ foreign key (regno) references lawyers(regno) on delete cascade,
+ primary key (regno));
+ 
+
+create table court
+(court_abv varchar(2),
+ court_name varchar(30),
+ primary key (court_abv));
+
+create table place
+(place_id int not null,
+ place_name varchar(30),
+ primary key(place_id));
+
+create table designation
+(regno smallint not null,
+ designation varchar(30),
+ court_abv varchar(2),
+ place_id int,
+ since int,
+ foreign key (court_abv) references court(court_abv),
+ foreign key (place_id) references place(place_id),
+ foreign key (regno) references lawyers(regno),
+ primary key(regno));
+ 
+ create table admin(
+username varchar(20) not null,
+password varchar(20) not null,
+primary key (username));
+
+
+
+create table cases(
+case_id int not null,
+case_title varchar(50) not null,
+c_s_date date,
+c_c_date date,
+c_type varchar(20),
+judgement varchar(20) not null,
+court_abv varchar(2),
+place_id int,    
+foreign key (court_abv) references court(court_abv),
+foreign key(place_id) references place(place_id),
+primary key (case_id));
+
+
+create table judgement
+(case_id int not null,
+jto1 smallint,
+jto2 smallint,
+jto3 smallint,
+jto4 smallint,
+foreign key (case_id) references cases(case_id),
+ primary key (case_id));
+
+create table clawyer
+(case_id int not null,
+ lawyer1 smallint,
+lawyer2 smallint,
+lawyer3 smallint,
+lawyer4 smallint,
+ foreign key(lawyer1) references lawyers(regno),
+  foreign key(lawyer2) references lawyers(regno),
+  foreign key(lawyer3) references lawyers(regno),
+  foreign key(lawyer4) references lawyers(regno),
+ foreign key(case_id) references cases(case_id),
+ primary key(case_id));
+
+create table customer
+(email_id varchar(50),
+ password varchar(20),
+ primary key(email_id));
+
+create table rating
+(email_id varchar(50) not null,
+ regno smallint not null,
+ rating int,
+ foreign key(email_id) references customer(email_id),
+foreign key(regno) references lawyers(regno),
+ primary key(email_id,regno));
+
+create table review(
+regno smallint not null on delete cascade,
+name varchar(20),
+gender char(1),
+dob date,
+doorno varchar(5),
+street varchar(50),
+locality varchar(50),
+city varchar(20),
+state varchar(20),
+pincode varchar(8),
+contact_no int,
+email_id varchar(50),
+pcttype varchar(2),
+llb year,
+llm year,
+mphil year,
+phd year,
+ayearsdc tinyint,
+ayearshc tinyint,
+ayearssc tinyint,
+jyearsdc tinyint,
+jyearshc tinyint,
+jyearssc tinyint,
+designation varchar(20),
+court_abv varchar(5),
+place_id tinyint,
+since tinyint,
+primary key (regno));

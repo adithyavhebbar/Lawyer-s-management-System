@@ -1,0 +1,10 @@
+.nav-header{
+    font-size: 1.23em;
+}
+ body {
+     background: linear-gradient(to right, rgb(46, 55, 56), rgb(127, 145, 148));
+     background-size: cover;
+ }
+ nav{
+     background-color: black;
+ }

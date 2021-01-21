@@ -1,0 +1,71 @@
+create table admin(
+username varchar(20) not null,
+password varchar(20) not null,
+primary key (username));
+
+create table cases(
+case_id int not null,
+case_title varchar(50) not null,
+c_s_date date,
+c_c_date date,
+c_type varchar(20),
+judgement varchar(20) not null,
+jto1 smallint,
+jto2 smallint,
+jto3 smallint,
+jto4 smallint,
+lawyer1 smallint,
+lawyer2 smallint,
+lawyer3 smallint,
+lawyer4 smallint,
+court_abv references court(court_abv),
+place_id references place(place_id),
+primary key (case_id));
+
+create table court(
+court_abv varchar(5) not null,
+court_name varchar(5) not null,
+primary key (court_abv));
+
+create table lawyers(
+regno smallint not null on delete cascade,
+name varchar(20),
+gender char(1),
+dob date,
+doorno varchar(5),
+street varchar(50),
+locality varchar(50),
+city varchar(20),
+state varchar(20),
+pincode varchar(8),
+contact_no int,
+email_id varchar(50),
+pcttype varchar(2),
+llb year,
+llm year,
+mphil year,
+phd year,
+ayearsdc tinyint,
+ayearshc tinyint,
+ayearssc tinyint,
+jyearsdc tinyint,
+jyearshc tinyint,
+jyearssc tinyint,
+designation varchar(20),
+court_abv varchar(5),
+place_id tinyint,
+since tinyint,
+primary key (regno));
+
+create table login(
+regno smallint not null,
+psw varchar(20) not null,
+foreign key (regno) references lawyers(regno));
+
+create table place(
+place_id tinyint not null,
+place_name varchar(50),
+primary key (place_id));
+
+create trigger ins_lawyer after insert on lawyers
+for each row set @count=@count+1;

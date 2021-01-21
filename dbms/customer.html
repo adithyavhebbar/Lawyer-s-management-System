@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script language="JavaScript">
+    javascript:window.history.forward(1);
+</script>
+<title>Admin</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+	}
+</style>
+</head>
+<body class="w3-black" onload="noBack();"  onpageshow="if (event.persisted) noBack();" onunload="" >
+
+<div class="w3-content w3-justify w3-text-grey w3-padding-64">
+<h1 class="w3-text-light-grey" align="center" style="font-size:80px">Guest login</h1>
+
+<form action="clogin.php" method="POST">
+	<table style="font-size:20px" align="center">
+	<tr><td style="color:black;" colspan="2">......</td></tr>
+	<tr><td style="color:black;" colspan="2">......</td></tr>
+	<tr><th><label for="aid"><b>Email_id :</b></label></th><th>
+    <input style="color:black;" type="text" placeholder="Enter admin id" name="email_id" required><br></th></tr>
+    <tr><th><label for="psw"><b>Password:</b></label></th><th>
+    <input style="color:black;" type="password" placeholder="Enter Password" name="password" required><br></th><tr>
+	<tr><td style="color:black;" colspan="2">......</td></tr>
+	<tr><td style="color:black;" colspan="2">......</td></tr>
+    <tr><td align="left"><button type="submit" name="submit">Login</button></td><td align="right"><button type='reset' name="reset">reset</button></td></tr>
+	</table>
+	
+	</form>
+</div>
+
+
+
+</body>
+</html>

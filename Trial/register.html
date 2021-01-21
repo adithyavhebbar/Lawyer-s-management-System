@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <link rel='stylesheet' href='bootstrap/bootstrap-4.3.1-dist/css/bootstrap.css' />
+    <script src='bootstrap/bootstrap-4.3.1-dist/js/bootstrap.js'></script>
+    <link rel='stylesheet' href='css/upcase.css'/>
+    <link href='vendor/fontawesome-free/css/all.min.css' rel='stylesheet' type='text/css'>
+    <link href='font.css' rel='stylesheet' type='text/css'>
+    <link href='font1.css' rel='stylesheet' type='text/css'>
+  
+    <!-- Theme CSS -->
+    <link href='css/freelancer.min.css' rel='stylesheet'>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+   
+    <!-- Material Design Bootstrap -->
+    <link href='css/mdb.min.css' rel='stylesheet'>
+    <!-- Your custom styles (optional) -->
+    <link href='css/style.min.css' rel='stylesheet'>
+    <script language="javascript">
+            function verify() {
+    
+                
+                if (document.form1.name.value == "") 
+                {
+                    alert("Please give the Name");
+                    return false;
+                }
+    
+                if (document.form1.pctype.value == "") 
+                {
+                    alert("Please give the value");
+                    return false;
+                }
+                
+                if (document.form1.email.value == "") {
+                    alert("Please give subject");
+                    return false;
+                }
+    
+                if (document.form1.contact.value == "") {
+                    alert("Please give Teacher Name");
+                    return false;
+                }
+    
+                 if (document.form1.designation.value == "" ) {
+                    alert("Please enter value");
+                    return false;
+                }
+                
+                 if (document.form1.gender.value == "" ) {
+                    alert("Please enter value");
+                    return false;
+                }
+                        
+                return ( true );
+            }
+        </script>
+</head>
+<body>
+    <nav class='navbar navbar-expand-lg text-uppercase fixed-top' id='mainNav' style='background-color: black;height:85px;'>
+        <div class='container' style='background-color: black;'>
+          <a class='navbar-brand js-scroll-trigger' href='#page-top'>Ministry Of Law and Justice(India)<image src='img/e4.jpg' class='w3-image' width='50' height='75'></image></a>
+          <button class='navbar-toggler navbar-toggler-right text-uppercase font-weight-bold text-white rounded' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
+            Menu
+            <i class='fas fa-bars'></i>
+          </button>
+          <div class='collapse navbar-collapse' id='navbarResponsive'>
+            <ul class='navbar-nav ml-auto'>
+              
+              <li class='nav-item mx-0 mx-lg-1'>
+                <a class='nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger' href='logout.php'  onmouseover="{this.style.backgroundColor='#343a40';this.style.color='white'}" onmouseout="this.style.backgroundColor='#000000';" >LogOut</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class='row justify-content-center' style='margin: 5%;'>
+        <div class='col-md-6'>
+            <div class='card'>
+                <header class='card-header'>
+                    <!-- <a href='' class='float-right btn btn-outline-primary mt-1'>Log in</a> -->
+                    <h4 class='card-title mt-2'>Register</h4>
+                </header>
+                <article class='card-body'>
+                    <form method='POST' action='insert.php'>
+                        <div class='form-group'>
+                            <div class='form-row'>
+                                <div class='form-group col'>
+                                    <label>Name</label>
+                                    <input type='text' class='form-control' placeholder='name' name='name'>
+                                </div>
+                            </div>
+                            <div class='form-row'>
+                                <div class='form-group col'>
+                                    <label>Gender</label><br>
+                                    <input type='radio' name='gender' value='male' style='color:black' />Male &nbsp; &nbsp;<input type='radio' name='gender' value='female' style='color:black' />Female&nbsp; &nbsp;<input type='radio' name='gender' value='other' style='color:black' />Other<br><br>
+                                </div>
+                            </div>
+                            <div class='form-row'>
+                                <div class='form-group col'>
+                                    <label>Date of Birth</label>
+                                    <input type='date' class='form-control'  name='dob'>
+                                </div>
+                            </div>
+                            <div class='form-row'>
+                                <div class='form-group col'>
+                                    <label>Door No</label>
+                                    <input type='text' class='form-control' placeholder='' name='doorno'>
+                                </div>
+                                <div class='form-group col'>
+                                    <label>Street</label>
+                                    <input type='text' class='form-control' placeholder='' name='street'>
+                                </div>
+                            </div>
+                            <div class='form-row'>
+                                <div class='form-group col'>
+                                    <label>Locality</label>
+                                    <input type='text' class='form-control' placeholder='' name='locality'>
+                                </div>
+                                <div class='form-group col'>
+                                    <label>City</label>
+                                    <input type='text' class='form-control' placeholder='' name='city'>
+                                </div>
+                            </div>
+                            <div class='form-row'>
+                                <div class='form-group col'>
+                                     <label>State</label>
+                                     <input type='text' class='form-control' placeholder='' name='state'>
+                                </div>
+                                <div class='form-group col'>
+                                     <label>Pin Code</label>
+                                     <input type='text' class='form-control' placeholder='' name='pincode'>
+                                </div>
+                            </div>
+                            <p class='text-lg-center mt-lg-5 text-primary text-uppercase bold'>Contact Details</p>
+                            <div class='form-row'>
+                                <div class='form-group col'>
+                                    <label>Contact No</label>
+                                    <input type='text' class='form-control' placeholder='' name='contact_no'>
+                                </div>
+                                <div class='form-group col'>
+                                    <label>Email Id</label>
+                                    <input type='text' class='form-control' placeholder='' name='email_id'>
+                                </div>
+                            </div>
+                            <div class='col form-group'>
+                                <label>Preferred Case Type</label>
+                                <div class='drop-down'>
+                                    <select name='pctype' class='form-control col-lg-12'>
+                                        echo "<option value='criminal' selected>Criminal</option>
+                                        echo "<option value='legal'>Legal</option>
+                                    </select>
+                                </div>
+                             </div>
+                            <p class='text-lg-center mt-lg-5 text-primary text-uppercase bold'>Qualification</p>
+                                <div class='form-row'>
+                                    <div class='form-group col'>
+                                        <label>LLB </label><br>
+                                        <input type='radio' name='llb' value='yes' style='color:black' />yes &nbsp; &nbsp;<input type='radio' name='llb' value='no' style='color:black' />no<br>
+                                    </div>
+                                    <div class='form-group col'>
+                                        <br><label>LLM </label><br>
+                                        <input type='radio' name='llm' value='yes' style='color:black' />yes &nbsp; &nbsp;<input type='radio' name='llm' value='no' style='color:black' />no<br>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group col'>
+                                        <br><label>M Phil </label><br>
+                                        <input type='radio' name='mphil' value='yes' style='color:black'/>yes &nbsp; &nbsp;<input type='radio' name='mphil' value='no' style='color:black' />no</th><br>
+                                    </div>
+                                    <div class='form-group col'>
+                                        <br><label> PhD</label><br>
+                                        <input type='radio' name='phd' value='yes' style='color:black' />yes &nbsp; &nbsp;<input type='radio' name='phd' value='no' style='color:black' />no</th><br>
+                                    </div>
+                                </div>
+                                <p class='text-lg-center mt-lg-5 text-primary text-uppercase bold'>Current Info</p>
+                                <div class='form-row'>
+                                    <div class='form-group col'>
+                                        <label>Designation</label><br>
+                                        <select name='designation' class='form-control col-lg-12'>
+                                            <option value='advocate' selected>Advocate</option>
+                                            <option value='judge'>Judge</option>
+                                            <option value='publicProsecutor'>Public Prosecutor</option>
+                                            <option value='legalAdvisor'>Legal Advisor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='col form-group'>
+                                        <label>Court</label>
+                                        <div class='drop-down'>
+                                            <select name='court_abv' class='form-control col-lg-12'>
+                                                <option value='dc' selected>District Court</option>
+                                                <option value='hc'>High Court</option>
+                                                <option value='sc'>Supreme Court</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class='form-group col'>
+                                        <label>Place</label>
+                                        <div class='drop-down'>
+                                            <select name='place_id' class='form-control col-lg-12'>
+                                                <option value='1' selected>Bangalore</option>
+                                                <option value='4'>Kolkata</option>
+                                                <option value='3'>Delhi</option>
+                                                <option value='2'>Chennai</option>
+                                            </select></div></div>
+                                        </div>
+                                <center><input type='submit' value='submit'/></center>
+                             </form>
+                        </article>
+                    </div>
+                </div>
+    </body>
+</html>

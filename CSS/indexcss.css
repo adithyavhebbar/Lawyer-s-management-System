@@ -1,0 +1,38 @@
+#sidebar{
+    background-color: rgba(153, 67, 71, 0.3);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 655px;
+    float: left;
+    overflow-x: hidden;
+}
+#lawyerform,
+#adminform,
+#userform {
+    margin-left: 25%;
+    background-image: linear-gradient(to top, rgb(67, 95, 104), rgb(128, 191, 255));
+    opacity: 0.9;
+}
+
+
+p{
+    font-weight: bold;
+}
+
+#head-container{
+    margin-left: 25%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: 600px;
+    opacity: 0;
+    border-radius: 1%;
+}
+body{
+    background-image: url("../images/hammer.jpg");
+    background-repeat: no-repeat;
+    background-size: 2850px;
+}
+.form-margin{
+    margin-left: 15%;
+}

@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html>
+<title>Lawyers association</title>
+<script language="JavaScript">
+    javascript:window.history.forward(1);
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+	}
+</style>
+
+    <script language="javascript">
+        function verify() {
+
+            
+            if (document.form1.name.value == "") 
+			{
+                alert("Please give the Name");
+                return false;
+            }
+
+			if (document.form1.pctype.value == "") 
+			{
+                alert("Please give the value");
+                return false;
+            }
+			
+			if (document.form1.email.value == "") {
+                alert("Please give subject");
+                return false;
+            }
+
+            if (document.form1.contact.value == "") {
+                alert("Please give Teacher Name");
+                return false;
+            }
+
+             if (document.form1.designation.value == "" ) {
+                alert("Please enter value");
+                return false;
+            }
+			
+			 if (document.form1.gender.value == "" ) {
+                alert("Please enter value");
+                return false;
+            }
+					
+            return ( true );
+        }
+    </script>
+
+</head>
+<body class="w3-black"  >
+<p align="right"><a href="adminwelcome.html"><button type="button" style="color:black;">Back </button></a></p>
+<h1 align="center" style="font-size:40px">Registration </h1>
+ 
+ 
+<table align="center">
+<form method="POST" name="form1" onSubmit="return (verify());" action="insert.php">
+
+   
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		    <tr colspan="2"><td style="color:black;">..</td></tr>
+
+		<tr>
+        <td><strong>Name : </strong></td>
+        <td style="color:black;">
+            <input type="text" name="name" placeholder="Enter your name..."/>
+        </td>
+        </tr>
+
+		<tr>
+            <td><strong>Date of Birth :</strong></td>
+            <td style="color:black;">
+
+                <input type="date" name="dob" placeholder="Enter your date of birth..."/>
+            </td>
+
+        </tr>
+		
+		<tr>
+            <td><strong>Gender :</strong></td>
+            <td>
+
+                <p><input type="radio" value="m" name="gender"/> Male<br>
+				<input type="radio" value="f" name="gender"/> Female<br>
+				<input type="radio" value="o" name="gender"/> Others</p>
+            </td>
+
+        </tr>		
+		<tr>
+            <td colspan="2"><strong>Address </strong></td>
+		</tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+			<td><strong>Door Number :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="doorno" placeholder="door no"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>Street :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="street" placeholder="street"/>
+            </td>
+        </tr>
+
+		<tr>
+			<td><strong>Locality :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="locality" placeholder="locality"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>City :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="city" placeholder="city"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>State :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="state" placeholder="state"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>Pin Code :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="pincode" placeholder="pincode"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>Prefered Case Type :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="pctype" placeholder="preferred case type"/>
+            </td>
+        </tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		    <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+            <td colspan="2"><strong>Contact Information</strong></td>
+		</tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+			<td><strong>Email Id :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="email_id" placeholder="enter email_id"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>Contact No :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="contact_no" placeholder="enter contact no"/>
+            </td>
+        </tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr> 
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+            <td colspan="2"><strong>Qualiication</strong></td>
+		</tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+			<td><strong>LLB Grad Year :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="llb" placeholder="year"/>
+            </td>
+        </tr>
+
+		<tr>
+			<td><strong>LLM Grad Year :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="llm" placeholder="year"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>MPhil Grad Year :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="mphil" placeholder="year"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>PhD Year :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="phd" placeholder="year"/>
+            </td>
+        </tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		    <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+            <td colspan="2"><strong>Expirience as Advocate</strong></td>
+		</tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+			<td><strong>Number of years in District Court :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="adc" placeholder="in integer"/>
+            </td>
+        </tr>
+
+		<tr>
+			<td><strong>Number of years in Hugh Court :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="ahc" placeholder="in integer"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>Number of years in Supreme Court :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="asc" placeholder="in integer"/>
+            </td>
+        </tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		    <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+            <td colspan="2" ><strong>Expirience as Judge</strong></td>
+		</tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr>
+			<td><strong>Number of years in District Court :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="jdc" placeholder="in integer"/>
+            </td>
+        </tr>
+
+		<tr>
+			<td><strong>Number of years in High Court :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="jhc" placeholder="in integer"/>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>Number of years in Supreme Court :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="jsc" placeholder="in integer"/>
+            </td>
+        </tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		    <tr colspan="2"><td style="color:black;">..</td></tr>
+			<tr colspan="2"><td style="color:black;">Current Designation </td></tr>
+			  <tr colspan="2"><td style="color:black;">..</td></tr>
+				<tr>
+			<td><strong>Designation Name :</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="designation" placeholder="enter current designation"/>
+            </td>
+        </tr>
+		
+		<tr>
+            <td><strong>Court :</strong></td>
+            <td style="color:black;">
+				<select name="court_abv">
+					<option value="dc">District court</option>
+					<option value="hc">high court</option>
+					<option value="sc"> supreme court</option>
+					<option value="null">---</option>
+				</select>
+            </td>
+        </tr>
+		
+		<tr>
+            <td><strong>Place :</strong></td>
+            <td style="color:black;">
+				<select name="placeid">
+					<option value="1">Banglore</option>
+					<option value="2">Chennai</option>
+					<option value="3">Delhi</option>
+					<option value="4">Kolkata</option>
+				</select>
+            </td>
+        </tr>
+		
+		<tr>
+			<td><strong>Since (Years):</strong></td>
+            <td style="color:black;">
+                <input type="text"  name="since" placeholder="in integer"/>
+            </td>
+        </tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		    <tr colspan="2"><td style="color:black;">..</td></tr>
+		<tr align="center">
+            <td align="left" style="color:black;">
+                <input type="submit" value="Submit" />
+            </td>
+            <td align="left" style="color:black;">
+                <input type="reset">
+            </td>
+        </tr>
+		  <tr colspan="2"><td style="color:black;">..</td></tr>
+		    <tr colspan="2"><td style="color:black;">..</td></tr>
+			  <tr colspan="2"><td style="color:black;">..</td></tr>
+    </table>
+</form>
+
+</body>
+</html>

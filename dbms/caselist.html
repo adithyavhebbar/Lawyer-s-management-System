@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>caselist</title>
+<script language="JavaScript">
+    javascript:window.history.forward(1);
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+	}
+</style>
+
+    <script language="javascript">
+        function verify() {
+
+            if (document.form1.case_id.value == "")
+			{
+                alert("Please give case_id");
+                //document.form1.name.forus();
+                return false;
+            }
+
+            if (document.form1.case_title.value == "") 
+			{
+                alert("Please give the case_title");
+                return false;
+            }
+
+			if (document.form1.c_s_date.value == "") 
+			{
+                alert("Please give the case start date");
+                return false;
+            }
+			
+		
+             if (document.form1.lawyer1.value == "" ) {
+                alert("Please enter atleast 2 lawyers handling case");
+                return false;
+            }
+			
+			 if (document.form1.lawyer2.value == "" ) {
+                alert("Please enter atleast 2 lawyers handling case");
+                return false;
+            }
+					
+            return ( true );
+        }
+    </script>
+
+</head>
+<body class="w3-black"  >
+<h1 align="center" style="font-size:40px">CaseList:</h1>
+<p align="right"><a href="adminwelcome.html"><button type="button" style="color:black;">Back </button></a></p>
+<table align="center">
+<form method="POST" name="form1" onSubmit="return (verify());" action="inv.php">
+  
+  <tr><td style="color:white;">Case  Title :</td><td style="color:black;" ><input type="text" name="case_title" placeholder="Enter case title..." ></td></tr>
+  <tr><td style="color:white;">Case start date :</td><td  style="color:black"><input type="date" name="cs_date" ></td></tr>
+  <tr><td style="color:white;">Case close date :</td><td  style="color:black"><input type="date" name="cc_date"></td></tr>
+   <tr><td style="color:white;">Case Type :</td><td><select style="color:black;" name="c_type">
+    <option value="criminal" selected>CRIMINAL</option>
+    <option value="legal">LEGAL</option>
+	<option value="both">BOTH LEGAL AND CRIMINAL</option>
+	  </select></td></tr>
+  <tr><td style="color:white;">Judgement :</td><td><select style="color:black;" name="judgement">
+    <option value="PENDING" selected>PENDING</option>
+    <option value="GIVEN">GIVEN</option>
+	  </select></td></tr>
+  <tr colspan="2"><td>Judgement given towards :</td></tr>
+  <tr><td style="color:white;">Lawyer 1 :</td><td ><input style="color:black;" type="text" name="jto1" placeholder="Enter lawyer regno..."></td></tr>
+   <tr><td style="color:white;">Lawyer 2 :</td><td ><input style="color:black;" type="text" name="jto2" placeholder="Enter lawyer regno..."></td></tr> 
+   <tr><td style="color:white;">Lawyer 3 :</td><td ><input style="color:black;" type="text" name="jto3" placeholder="Enter lawyer regno..."></td></tr>
+    <tr><td style="color:white;">Lawyer 4 :</td><td><input style="color:black;" type="text" name="jto4" placeholder="Enter lawyer regno..."></td></tr>
+	<tr style="color:black; colspan="2"><td>.....</td></tr>
+	
+	  	<tr style="color:black; colspan="2"><td>.....</td></tr>
+	<tr colspan="2"><td style="color:white;">Lawyers handling the case :</td></tr>
+	 <tr><td style="color:white;">Lawyer 1 :</td><td ><input style="color:black;" type="text" name="lawyer1" placeholder="Enter lawyer regno..."></td></tr>
+   <tr><td style="color:white;">Lawyer 2 :</td><td ><input style="color:black;" type="text" name="lawyer2" placeholder="Enter lawyer regno..."></td></tr> 
+   <tr><td style="color:white;">Lawyer 3 :</td><td ><input style="color:black;" type="text" name="lawyer3" placeholder="Enter lawyer regno..."></td></tr>
+    <tr><td style="color:white;">Lawyer 4 :</td><td ><input style="color:black;" type="text" name="lawyer4" placeholder="Enter lawyer regno..."></td></tr>
+		<tr style="color:black; colspan="2"><td>.....</td></tr>
+	<tr><td style="color:white;">Court :</td><td><select style="color:black;" name="court_abv">
+    <option value="dc">District court</option>
+    <option value="hc">high court</option>
+    <option value="sc"> supreme court</option>
+	<option value="null">---</option>
+	  </select></td></tr>
+	  	<tr style="color:black; colspan="2"><td>.....</td></tr>
+	<tr><td style="color:white;">Place :</td><td><select style="color:black;" name="place_id">
+    <option value="2">CHENNAI</option>
+    <option value="4">KOLKATTA</option>
+    <option value="3">DELHI</option>
+	<option value="1">BANGALORE</option>
+	  </select></td></tr>
+	  	<tr style="color:black; colspan="2"><td>.....</td></tr>	<tr style="color:black; colspan="2"><td>.....</td></tr>
+	   <tr><td style="color:black;"><input type="submit" name="submit" ></td><td  style="color:black;"><button type="reset" name="reset">&nbsp Reset</button></td></tr>
+</form>
+</table>
+</body>
+</html>
+	
+	

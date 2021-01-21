@@ -1,0 +1,29 @@
+.rating
+{
+	transform:rotateY(180deg);
+}
+.rating input{
+	display: none;
+}
+
+.rating label:after
+{
+	content: '\f005';
+	font-family: fontAwesome;
+	position: relative rotateY(180);
+	display: block;
+	font-size:40px;
+	color:white;
+	top:0;
+	opacity:1;
+	transition: .5s;
+	
+	
+	
+}
+.rating label:hover:after,
+.rating input:checked ~ label:after
+{
+	opacity:1;
+	color:yellow;
+}
